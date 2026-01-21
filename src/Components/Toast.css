@@ -1,0 +1,24 @@
+/* Success toast background */
+.Toastify__toast--success {
+  background: #E2852E !important; /* Bootstrap yellow */
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Info toast background */
+.Toastify__toast--info {
+  background: #E2852E !important; /* Light yellow */
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Error toast (optional – red keep pannalam) */
+.Toastify__toast--error {
+  background: #dc3545 !important;
+  color: #fff !important;
+}
+
+/* Progress bar yellow */
+.Toastify__progress-bar {
+  background: #000 !important;
+}

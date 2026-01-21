@@ -1,0 +1,211 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ================= TOPBAR ================= */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ebe4e8;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  padding-top: 6px;
+}
+
+/* hide topbar */
+body.hide-topbar .topbar {
+  transform: translateY(-100%);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: rgb(61, 57, 57);
+  z-index: 999;
+  transition: top 0.3s ease;
+  padding: 14px 0;
+}
+
+/* when topbar hidden */
+body.hide-topbar .navbar {
+  top: 0;
+}
+
+/* ================= BODY SPACING ================= */
+body {
+  padding-top: 140px;
+}
+
+body.hide-topbar {
+  padding-top: 70px;
+}
+
+/* ================= UI ================= */
+.cakezone {
+  background-color: #E2852E;
+  position: relative;
+}
+
+.cakezone::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #fff;
+}
+
+.icons {
+  color: rgb(248, 163, 6);
+}
+
+.icons1 {
+  color: black;
+}
+
+h6 {
+  font-weight: bold;
+}
+
+/* ================= NAV LINKS ================= */
+.nav-link {
+  font-size: 18px;
+  font-weight: 650;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: #E2852E !important;
+}
+
+.active-nav {
+  color: #e88f2a !important;
+  font-weight: 600;
+  position: relative;
+}
+
+.active-nav::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e88f2a;
+}
+
+
+/* ================= DROPDOWN (🔥 FIXED) ================= */
+.dropdown-menu {
+  background-color: #2b2019;
+  border-radius: 10px;
+  border: none;
+  padding: 6px 0;
+}
+
+.dropdown-item {
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 16px;
+}
+
+.dropdown-item:hover {
+  background-color: #E2852E;
+  color: #000;
+}
+
+/* ================= NAV ICONS ================= */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cart,
+.wishlist {
+  color: white;
+  font-size: 22px;
+}
+
+.cart:hover{
+  color: #E2852E;
+}
+.wishlist:hover {
+  color: #cf122f;
+}
+
+/* ================= BADGE ================= */
+.cart .badge {
+  font-size: 11px;
+  padding: 4px 6px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 991px) {
+
+  /* menu height control */
+  .navbar-collapse {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .navbar-nav {
+    background-color: #2b2019;
+    border-radius: 12px;
+    padding: 12px 0;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    font-size: 17px;
+    padding: 10px 0;
+  }
+
+  /* dropdown full width in mobile */
+  .dropdown-menu {
+    width: 90%;
+    margin: 8px auto;
+    text-align: center;
+  }
+
+  .nav-icons {
+    margin-left: auto;
+  }
+}
+
+/* ================= MOBILE TOPBAR CLEAN STYLE ================= */
+@media (max-width: 991px) {
+
+  .topbar {
+    padding: 6px 0;
+  }
+
+  .topbar .col-lg-4:first-child,
+  .topbar .col-lg-4:last-child {
+    display: none;
+  }
+
+  .topbar .cakezone {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .topbar .cakezone h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+}

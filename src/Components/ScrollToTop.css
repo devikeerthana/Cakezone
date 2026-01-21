@@ -1,0 +1,41 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #E2852E ;   /* black circle */
+  color: #fff;              /* arrow color */
+  border: none;
+  border-radius: 50%;       /* perfect circle */
+  cursor: pointer;
+  font-size: 24px;          /* bold / bigger arrow */
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transform: scale(0);      /* hidden initially */
+  transition: transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Show arrow with smooth pop */
+.scroll-to-top.show {
+  transform: scale(1);
+}
+
+/* Hover bounce animation */
+.scroll-to-top:hover {
+  animation: bounce 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Bounce keyframes */
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.2); }
+  50%  { transform: scale(1); }
+  70%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

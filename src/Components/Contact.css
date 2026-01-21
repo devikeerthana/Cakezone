@@ -1,0 +1,119 @@
+.contact {
+    background-image: url('../assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    margin-bottom: 100px;
+}
+
+.contact h1 {
+    font-size: 60px;
+    font-weight: 800;
+    color: beige;
+}
+
+.contact1 {
+    background-image: url('../assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    margin-bottom: 100px;
+}
+
+.contact-box {
+    background-color: #E2852E;
+    border: 3px solid #E2852E;
+    height: 200px;
+    width: 320px;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    position: relative;
+    top: -100px;
+    z-index: 10;
+    margin-bottom: -60px;
+    padding: 20px;
+}
+
+.contact-box::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid #fff;
+}
+.contact-icons{
+    color: white;
+    font-size: 40px;
+    font-weight:600 ;
+}
+.contact-h5{
+    font-weight: 650;
+    color: rgb(36, 34, 34);
+    letter-spacing: -2px;
+}
+.contact-h6{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+.btn{
+    position: relative;
+    background-color: #E2852E;
+}
+.btn:hover{
+    color: #E2852E;
+    background-color: #E2852E;
+}
+.form-control {
+  border-radius: 0 !important;
+}
+
+
+
+/* ================= TABLET VIEW (768px–991px) ================= */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* ONLY card row */
+  .contact1 > .container > .row:first-child {
+    justify-content: center;
+    row-gap: 40px;
+  }
+
+  /* cancel desktop lift for cards */
+  .contact1 > .container > .row:first-child .contact-box {
+    top: -80px;
+    margin-bottom: 0;
+  }
+
+  /* 3rd card center & new row */
+  .contact1 > .container > .row:first-child 
+  .col-lg-4:nth-child(3) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/* ================= MOBILE VIEW (≤767px) ================= */
+@media (max-width: 767px) {
+
+  /* row full center */
+  .contact1 > .container > .row:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 25px;
+  }
+
+  /* card perfectly center */
+  .contact1 > .container > .row:first-child .contact-box {
+    top: -80px;
+    margin: 0 auto;
+    width: 90%;          /* neat spacing */
+    max-width: 320px;   /* same as desktop card */
+  }
+}

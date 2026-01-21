@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --bg-main: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #1f2933;
+  --text-muted: #0a0a0a;
+  --accent: #f28c28;
+  --border-light: #e5e7eb;
+}
+
+/* Page */
+.checkout-container {
+  max-width: 480px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background: var(--bg-main);
+  padding: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cards */
+.checkout-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Inputs */
+.checkout-card input:not([type="radio"]) {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background: #f9fafb;
+}
+
+/* Payment */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+}
+
+.payment-card.active {
+  border-color: var(--accent);
+  background: rgba(242, 140, 40, 0.12);
+}
+
+/* Order Summary */
+.summary-list {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.summary-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.summary-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+/* Button */
+.confirm-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background: #e07b18;
+}

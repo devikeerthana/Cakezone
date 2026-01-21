@@ -1,0 +1,62 @@
+.cart-page {
+  padding: 60px 80px;
+  background-color: #fff;
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 576px) {
+  .cart-page {
+    padding: 30px 10px;
+  }
+}
+
+.your-cart {
+  color: #e2852e;
+  font-size: 40px;
+  font-family: 'Lobster', cursive;
+  font-weight: 800;
+}
+
+.empty {
+  color: #0f0f0f;
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+}
+
+.cart-item {
+  background-color: #f9e9f2;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.cart-total {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e2852e;
+  text-align: center;
+}

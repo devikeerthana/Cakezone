@@ -1,0 +1,112 @@
+.master{
+  background-image: url('../assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 180px;
+}
+
+.master h1 {
+  font-size: 60px;
+  font-weight: 800;
+  color: beige;
+}
+
+/* SERVICE SECTION */
+.master2{
+  background-image: url('../assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 80px;
+}
+
+/* CARD */
+.master-box{
+  background-color: #E2852E;
+  border: 3px solid #E2852E;
+  width: 100%;
+  max-width: 300px;
+  min-height: 260px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  position: relative;
+  z-index: 5;
+  padding: 20px;
+  margin-bottom: 10px;
+  top: -90px;
+}
+
+/* INNER BORDER */
+.master-box::before{
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #fff;
+}
+
+/* TITLE */
+.bday-cake{
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+/* LINK */
+.text-black{
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.text-black:hover{
+  color: #000;
+}
+
+/* DISCOUNT */
+.discount{
+  font-weight: 900;
+  font-size: 42px;
+  font-family: monospace;
+  letter-spacing: -2px;
+}
+
+/* BUTTON */
+.order-btn {
+  position: relative;
+  background-color: #E2852E;  
+  border: none;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.order-btn::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #fff;   
+}
+
+.order-btn:hover {
+  background-color: #4e2804; 
+  transform: scale(1.05);
+}
+
+/* MOBILE FIX */
+@media (max-width:768px) {
+  .master h1{
+    font-size: 40px;
+  }
+
+  .discount{
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  .master-box{
+    margin-bottom: 20px;
+  }
+}

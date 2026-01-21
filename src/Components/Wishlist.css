@@ -1,0 +1,55 @@
+.product-section {
+  padding: 40px 0;
+}
+
+/* CARD SIZE FIXED — ALWAYS SAME */
+.product-card {
+  width: 300px;                 /* ⭐ SAME SIZE EVERYWHERE */
+  background: #f9ecf3;
+  border-radius: 15px;
+  padding: 20px 18px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+/* LAZY LOAD BUG FIX */
+.lazy-load-image-background {
+  overflow: visible !important;
+}
+
+/* IMAGE */
+.product-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: auto;
+}
+
+/* PRICE */
+.price {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* WISHLIST ICON */
+.wishlist-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.wishlist-icon.active {
+  color: red;
+}
+.lazy-load-image-background {
+  display: block !important;
+  margin: auto;
+}
