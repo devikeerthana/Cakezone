@@ -1,3 +1,20 @@
+# Cakezone 🍰
+
+Frontend web application for Cakezone.
+
+## Tech Stack
+- React
+- Vite
+- Bootstrap / CSS
+
+## Features
+- Responsive UI
+- Product listing
+- Modern design
+
+## Setup
+npm install  
+npm run dev
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
