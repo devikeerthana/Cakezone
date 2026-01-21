@@ -1,4 +1,5 @@
 # Cakezone 🍰
+cakezone-7bn2.vercel.app
 
 Frontend web application for Cakezone.
 
