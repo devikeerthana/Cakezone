@@ -25,6 +25,8 @@
   transition: all 0.5s ease;
   transform: scale(0.9); /* side cards smaller */
   opacity: 0.5;          /* side cards transparent */
+  display: flex;
+  justify-content: center;
 }
 
 .testimonial-inner {
@@ -35,6 +37,11 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;   /* ensures all cards equal height */
+  min-height: 300px;      /* adjustable, ensures uniformity */
 }
 
 /* border effect */
@@ -87,28 +94,32 @@
   color: aliceblue;
   font-size: 15px;
   line-height: 1.6;
+  overflow-wrap: break-word; /* ensures long text wraps */
 }
 
-/* ---------- MOBILE FIX ---------- */
+/* ---------- MOBILE & TABLET FIX ---------- */
 
 @media (max-width: 992px) {
   .testimonial-card {
-    transform: scale(1) !important; /* no scale on mobile */
+    transform: scale(1) !important; /* no scaling */
     opacity: 1 !important;           /* all visible */
     padding: 15px;
   }
 
   .testimonial-inner {
     padding: 25px 20px;
+    min-height: auto;               /* mobile height adjusts to content */
   }
 
   .slick-slide {
     display: flex !important;
     justify-content: center;
+    align-items: stretch;
   }
 
   .slick-track {
     display: flex !important;
+    align-items: stretch;
   }
 
   .client-text {
