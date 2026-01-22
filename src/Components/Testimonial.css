@@ -1,11 +1,8 @@
-/* ================================================= */
-/* ---------- HEADER ---------- */
-/* ================================================= */
+/* ================= HEADER ================= */
 
 .test {
   background-image: url('../assets/bg.jpg');
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -25,12 +22,10 @@
   color: rgb(34, 26, 26);
   font-size: 55px;
   font-weight: 800;
-  letter-spacing: -4px;
+  letter-spacing: -3px;
 }
 
-/* ================================================= */
-/* ---------- TITLE LINE ---------- */
-/* ================================================= */
+/* ================= TITLE LINE ================= */
 
 .title-underline {
   width: 150px;
@@ -51,97 +46,86 @@
   border-radius: 3px;
 }
 
-/* ================================================= */
-/* ---------- CARD COMMON (DESKTOP) ---------- */
-/* ================================================= */
+/* ================= DESKTOP CARD ================= */
 
 .testimonial-card {
-  padding: 20px;
+  padding: 15px;
   transition: all 0.4s ease;
   transform: scale(0.9);
   opacity: 0.5;
 }
 
 .testimonial-inner {
-  position: relative;
   background: #241f1f;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 30px;
-  min-height: 300px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
-.testimonial-inner::before {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 1px solid #fff;
-}
-
-/* ================================================= */
-/* ---------- CENTER CARD (DESKTOP) ---------- */
-/* ================================================= */
-
+/* desktop center card */
 .slick-center .testimonial-card {
   transform: scale(1);
   opacity: 1;
 }
 
-/* ================================================= */
-/* ---------- CONTENT ---------- */
-/* ================================================= */
+/* ================= CONTENT ================= */
 
 .client-img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin: 0 auto 12px;
+  display: block;
 }
 
 .client-name {
-  font-weight: bold;
   color: #E2852E;
+  font-weight: 700;
+  text-align: center;
 }
 
 .client-profession {
-  color: #e9e7e4;
+  color: #ddd;
   font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .client-text {
-  color: aliceblue;
-  font-size: 15px;
+  color: #f1f1f1;
+  font-size: 14px;
   line-height: 1.6;
+  text-align: center;
 }
 
-/* ================================================= */
-/* ---------- DOTS ---------- */
-/* ================================================= */
+/* ================= DOTS ================= */
 
 .slick-dots {
-  bottom: -40px;
+  bottom: -35px;
 }
 
 .slick-dots li button:before {
   content: '';
   width: 6px;
-  height: 20px;
-  background: #a8a6a6;
+  height: 18px;
+  background: #aaa;
   display: block;
   border-radius: 2px;
 }
 
 .slick-dots li.slick-active button:before {
   background: #E2852E;
-  height: 30px;
+  height: 26px;
 }
 
 /* ================================================= */
-/* 📱 MOBILE – ORU CARD MATTUM (FINAL FIX) */
+/* 📱 MOBILE – FINAL GUARANTEED FIX */
 /* ================================================= */
+
 @media (max-width: 992px) {
 
+  /* slick core fix */
   .slick-slider,
   .slick-list,
   .slick-track {
@@ -151,7 +135,6 @@
   .slick-slide {
     display: flex !important;
     justify-content: center;
-    width: 100% !important;
   }
 
   .slick-slide > div {
@@ -160,8 +143,9 @@
     justify-content: center;
   }
 
+  /* card */
   .testimonial-card {
-    width: 90% !important;   /* 🔥 side gap kku */
+    width: 92% !important;
     padding: 0 !important;
     transform: none !important;
     opacity: 1 !important;
@@ -169,7 +153,6 @@
 
   .testimonial-inner {
     width: 100%;
-    min-height: auto;
-    padding: 25px 20px;
+    padding: 22px 18px;
   }
 }
