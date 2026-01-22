@@ -148,7 +148,6 @@ const handleAddToCart = (product) => {
   slidesToShow: 3,
   slidesToScroll: 1,
   centerMode: true,
-  centerPadding: '0px',
   autoplay: true,
   autoplaySpeed: 2500,
 
@@ -159,13 +158,13 @@ const handleAddToCart = (product) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: false,
-        centerPadding: '0px',
         infinite: true,
         autoplay: true
       }
     }
   ]
 };
+
   return (
     <>
    <div className="home">

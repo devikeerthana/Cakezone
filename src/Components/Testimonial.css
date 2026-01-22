@@ -52,17 +52,14 @@
 }
 
 /* ================================================= */
-/* ---------- CARD COMMON ---------- */
+/* ---------- CARD COMMON (DESKTOP) ---------- */
 /* ================================================= */
 
 .testimonial-card {
   padding: 20px;
-  outline: none;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
   transform: scale(0.9);
   opacity: 0.5;
-  display: flex;
-  justify-content: center;
 }
 
 .testimonial-inner {
@@ -70,13 +67,10 @@
   background: #241f1f;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-  overflow: hidden;
-  transition: all 0.5s ease;
   min-height: 300px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
 }
 
-/* inner border */
 .testimonial-inner::before {
   content: "";
   position: absolute;
@@ -91,10 +85,6 @@
 .slick-center .testimonial-card {
   transform: scale(1);
   opacity: 1;
-}
-
-.slick-center .testimonial-inner {
-  box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
 }
 
 /* ================================================= */
@@ -148,51 +138,39 @@
 }
 
 /* ================================================= */
-/* 📱 MOBILE – ONLY ONE CARD VISIBLE */
+/* 📱 MOBILE – ORU CARD MATTUM (FINAL FIX) */
 /* ================================================= */
 
 @media (max-width: 992px) {
 
-  /* 🔥 CRITICAL SLICK FIX */
+  /* 🔥 THIS IS THE REAL FIX */
   .slick-slider,
   .slick-list {
-    overflow: hidden;
+    overflow: hidden !important;
   }
 
   .slick-track {
-    display: flex;
+    display: flex !important;
   }
 
   .slick-slide {
-    display: flex !important;
-    justify-content: center;
+    width: 100% !important;
+    display: block !important;
   }
 
   .slick-slide > div {
-    width: 100%;
+    width: 100% !important;
   }
 
-  /* 🔥 REMOVE DESKTOP EFFECTS */
+  /* ❌ REMOVE ALL DESKTOP EFFECTS */
   .testimonial-card {
     transform: none !important;
     opacity: 1 !important;
-    width: 100% !important;
     padding: 10px;
-    display: block;
   }
 
   .testimonial-inner {
-    width: 100%;
     min-height: auto;
     padding: 25px 20px;
-  }
-
-  .slick-center .testimonial-card {
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
-  .client-text {
-    font-size: 14px;
   }
 }
