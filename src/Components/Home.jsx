@@ -143,23 +143,21 @@ const handleAddToCart = (product) => {
   ];
   const settings = {
   dots: true,
+  arrows: false,
   infinite: true,
-  speed: 600,
+  speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
   centerMode: true,
-  autoplay: true,
-  autoplaySpeed: 2500,
+  centerPadding: "0px",
 
   responsive: [
     {
       breakpoint: 992,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: false,
-        infinite: true,
-        autoplay: true
+        centerMode: false,   // 🔥 MOST IMPORTANT
+        centerPadding: "0px"
       }
     }
   ]
