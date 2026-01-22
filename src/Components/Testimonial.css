@@ -1,4 +1,6 @@
+/* ================================================= */
 /* ---------- HEADER ---------- */
+/* ================================================= */
 
 .test {
   background-image: url('../assets/bg.jpg');
@@ -26,7 +28,9 @@
   letter-spacing: -4px;
 }
 
+/* ================================================= */
 /* ---------- TITLE LINE ---------- */
+/* ================================================= */
 
 .title-underline {
   width: 150px;
@@ -47,7 +51,9 @@
   border-radius: 3px;
 }
 
+/* ================================================= */
 /* ---------- CARD COMMON ---------- */
+/* ================================================= */
 
 .testimonial-card {
   padding: 20px;
@@ -70,7 +76,7 @@
   min-height: 300px;
 }
 
-/* border */
+/* inner border */
 .testimonial-inner::before {
   content: "";
   position: absolute;
@@ -78,7 +84,9 @@
   border: 1px solid #fff;
 }
 
-/* ---------- CENTER CARD ---------- */
+/* ================================================= */
+/* ---------- CENTER CARD (DESKTOP) ---------- */
+/* ================================================= */
 
 .slick-center .testimonial-card {
   transform: scale(1);
@@ -89,7 +97,9 @@
   box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
 }
 
+/* ================================================= */
 /* ---------- CONTENT ---------- */
+/* ================================================= */
 
 .client-img {
   width: 100px;
@@ -115,7 +125,9 @@
   line-height: 1.6;
 }
 
+/* ================================================= */
 /* ---------- DOTS ---------- */
+/* ================================================= */
 
 .slick-dots {
   bottom: -40px;
@@ -141,16 +153,32 @@
 
 @media (max-width: 992px) {
 
-  /* MOST IMPORTANT */
+  /* 🔥 CRITICAL SLICK FIX */
+  .slick-slider,
   .slick-list {
     overflow: hidden;
   }
 
-  .testimonial-card {
-    transform: scale(1) !important;
-    opacity: 1 !important;
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .slick-slide > div {
     width: 100%;
-    padding: 15px;
+  }
+
+  /* 🔥 REMOVE DESKTOP EFFECTS */
+  .testimonial-card {
+    transform: none !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    padding: 10px;
+    display: block;
   }
 
   .testimonial-inner {
@@ -159,13 +187,8 @@
     padding: 25px 20px;
   }
 
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-  }
-
   .slick-center .testimonial-card {
-    transform: scale(1) !important;
+    transform: none !important;
     opacity: 1 !important;
   }
 

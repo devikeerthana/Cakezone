@@ -142,19 +142,30 @@ const handleAddToCart = (product) => {
     }
   ];
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '0px',
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      { breakpoint: 992, settings: { slidesToShow: 1 } }
-    ]
-  };
+  dots: true,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: '0px',
+  autoplay: true,
+  autoplaySpeed: 2500,
+
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+        centerPadding: '0px',
+        infinite: true,
+        autoplay: true
+      }
+    }
+  ]
+};
   return (
     <>
    <div className="home">
