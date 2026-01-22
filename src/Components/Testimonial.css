@@ -1,42 +1,56 @@
-/* ================= HEADER ================= */
+/* ================================================= */
+/* ---------- SECTION BACKGROUNDS ---------- */
+/* ================================================= */
 
 .test {
   background-image: url('../assets/bg.jpg');
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
+  padding: 100px 0;
 }
 
 .test h1 {
   font-size: 60px;
-  font-weight: 800;
-  color: beige;
+  font-weight: 900;
+  color: #f5f5dc; /* beige */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.test1 {
+  padding: 60px 0 40px 0;
 }
 
 .test1 h4 {
   color: #E2852E;
   font-family: 'Lobster', cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .test1 h1 {
-  color: rgb(34, 26, 26);
-  font-size: 55px;
+  color: #221a1a;
+  font-size: 50px;
   font-weight: 800;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
 }
 
-/* ================= TITLE LINE ================= */
+/* ================================================= */
+/* ---------- TITLE UNDERLINE ---------- */
+/* ================================================= */
 
 .title-underline {
-  width: 150px;
-  height: 3px;
+  width: 160px;
+  height: 4px;
   background-color: #E2852E;
   margin: 10px auto 40px;
   position: relative;
 }
 
 .title-underline span {
-  width: 40px;
+  width: 50px;
   height: 6px;
   background-color: #E2852E;
   position: absolute;
@@ -46,59 +60,82 @@
   border-radius: 3px;
 }
 
-/* ================= DESKTOP ================= */
+/* ================================================= */
+/* ---------- CARD DESIGN ---------- */
+/* ================================================= */
 
 .testimonial-card {
-  padding: 15px;
+  padding: 20px;
+  transition: all 0.4s ease;
   transform: scale(0.9);
   opacity: 0.5;
-  transition: all 0.4s ease;
 }
 
 .testimonial-inner {
+  position: relative;
   background: #241f1f;
-  border-radius: 12px;
+  border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  min-height: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+
+.testimonial-inner::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 15px;
+}
+
+/* ================================================= */
+/* ---------- CENTER CARD EFFECT ---------- */
+/* ================================================= */
 
 .slick-center .testimonial-card {
   transform: scale(1);
   opacity: 1;
 }
 
-/* ================= CONTENT ================= */
+/* ================================================= */
+/* ---------- CLIENT CONTENT ---------- */
+/* ================================================= */
 
 .client-img {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 12px;
-  display: block;
+  margin-bottom: 15px;
+  border: 3px solid #E2852E;
 }
 
 .client-name {
-  color: #E2852E;
   font-weight: 700;
-  text-align: center;
+  color: #E2852E;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .client-profession {
-  color: #ddd;
+  color: #e9e7e4;
   font-size: 14px;
-  text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .client-text {
-  color: #f1f1f1;
-  font-size: 14px;
+  color: #f5f5f5;
+  font-size: 15px;
   line-height: 1.6;
-  text-align: center;
 }
 
-/* ================= DOTS ================= */
+/* ================================================= */
+/* ---------- DOTS DESIGN ---------- */
+/* ================================================= */
 
 .slick-dots {
   bottom: -35px;
@@ -107,52 +144,51 @@
 .slick-dots li button:before {
   content: '';
   width: 6px;
-  height: 18px;
-  background: #aaa;
+  height: 20px;
+  background: #a8a6a6;
   display: block;
   border-radius: 2px;
 }
 
 .slick-dots li.slick-active button:before {
   background: #E2852E;
-  height: 26px;
+  height: 30px;
 }
 
 /* ================================================= */
-/* 📱 MOBILE – ONLY ONE CARD VISIBLE (FINAL FIX) */
+/* ---------- RESPONSIVE FIX (MOBILE) ---------- */
 /* ================================================= */
 
 @media (max-width: 992px) {
-
-  /* hide overflow completely */
-  .slick-slider,
-  .slick-list {
-    overflow: hidden !important;
-  }
-
-  .slick-track {
-    display: flex !important;
-  }
-
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-  }
-
   .slick-slide > div {
     width: 100% !important;
+    margin: 0 auto !important;
   }
 
   .testimonial-card {
-    width: 100% !important;
-    padding: 0 !important;
-    transform: none !important;
+    width: 90% !important;
+    transform: scale(1) !important;
     opacity: 1 !important;
+    padding: 0 !important;
+    margin: 0 auto;
   }
 
   .testimonial-inner {
-    width: 90%;
-    margin: 0 auto;
-    padding: 22px 18px;
+    width: 100% !important;
+    padding: 25px 20px !important;
+    min-height: auto !important;
+  }
+
+  .client-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .test1 h4 {
+    font-size: 2rem;
+  }
+
+  .test1 h1 {
+    font-size: 35px;
   }
 }

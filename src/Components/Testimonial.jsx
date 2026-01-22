@@ -1,12 +1,13 @@
-import React from 'react'
-import './Testimonial.css'
-import Slider from 'react-slick'
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import test1 from '../assets/testimonial-1.jpg'
-import test2 from '../assets/testimonial-2.jpg'
-import test3 from '../assets/testimonial-3.jpg'
-import test4 from '../assets/testimonial-4.jpg'
+import React from 'react';
+import './Testimonial.css';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import test1 from '../assets/testimonial-1.jpg';
+import test2 from '../assets/testimonial-2.jpg';
+import test3 from '../assets/testimonial-3.jpg';
+import test4 from '../assets/testimonial-4.jpg';
 
 const Testimonial = () => {
   const testimonials = [
@@ -16,56 +17,46 @@ const Testimonial = () => {
     { image: test4, name: 'Jemima', profession: 'Cricketer', text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.' }
   ];
 
-const settings = {
-  dots: true,
-  arrows: false,
-  infinite: true,
-  speed: 500,
-  autoplay: true,
-  autoplaySpeed: 2500,
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,       // Desktop
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "0px",
+    autoplay: true,
+    autoplaySpeed: 2500,
 
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  centerMode: true,
-  centerPadding: "0px",
-
-  responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: false,   // 🔥 MUST
-        centerPadding: "0px"
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,    // Mobile: 1 card
+          centerMode: true,
+          centerPadding: "0px",
+          autoplay: true,
+          dots: true,
+        }
       }
-    }
-  ]
-};
-
-
+    ]
+  };
 
   return (
     <>
       <section className='test text-center'>
         <div className='container'>
-          <div className='row'>
-            <div className='col-lg-12 my-5'>
-              <h1>TESTIMONIAL</h1>
-            </div>
-          </div>
+          <h1>TESTIMONIAL</h1>
         </div>
       </section>
 
       <section className='test1 text-center'>
         <div className='container'>
-          <div className='row'>
-            <div className='col-lg-12 my-5'>
-              <h4>Testimonial</h4>
-              <h1>OUR CLIENTS SAY!!!</h1>
-              <div className='title-underline'>
-                <span></span>
-              </div>
-            </div>
+          <h4>Testimonial</h4>
+          <h1>OUR CLIENTS SAY!!!</h1>
+          <div className='title-underline'>
+            <span></span>
           </div>
         </div>
       </section>
@@ -85,7 +76,7 @@ const settings = {
         </Slider>
       </div>
     </>
-  )
+  );
 }
 
-export default Testimonial
+export default Testimonial;
