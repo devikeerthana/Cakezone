@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Menu.css";
+import { toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './Home.css';
 import aboutimage from "../assets/about.jpg";
@@ -90,6 +91,24 @@ const Home = () => {
     const filteredProducts = productList.filter(p => p.category === selectedCategory);
   
     const isInWishlist = (id) => wishlist.some(item => item.id === id);
+
+    /* 🔥 HANDLERS */
+const handleWishlist = (product) => {
+    const exists = isInWishlist(product.id);
+    toggleWishlist(product);
+
+    if (exists) {
+      toast.info("Removed from wishlist 💔");
+    } else {
+      toast.success("Added to wishlist ❤️");
+    }
+  };
+
+const handleAddToCart = (product) => {
+  addToCart(product);
+  toast.success("Item added to cart 🛒");
+};
+
 
     const about1Ref = useRef(null);
 
@@ -319,36 +338,44 @@ const Home = () => {
       </div>
 
       {/* 🔹 Product Grid */}
-            <div className="container product-section">
-        <div className="product-grid">
-          {filteredProducts.map((p) => (
-            <div className="product-card position-relative" key={p.id}>
-              
-              {/* ❤️ WISHLIST ICON */}
-              <span
-        className={`wishlist-icon ${isInWishlist(p.id) ? "active" : ""}`}
-        onClick={() => handleWishlist(p)}
-      >
-        ♥
-      </span>
-      
-      
-              <LazyLoadImage
-                src={p.image}
-                alt={p.name}
-                effect="blur"
-              />
-      
-              <h4 className="mt-3">{p.name}</h4>
-              <p>₹{p.price}</p>
-      
-              <button onClick={() => handleAddToCart(p)}>
-                Add to Cart
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
+           <div className="container product-section">
+                   <div className="row justify-content-center g-4">
+                     {filteredProducts.map((p) => (
+                       <div
+                         key={p.id}
+                         className="col-12 col-sm-6 col-md-4 d-flex justify-content-center"
+                       >
+                         <div className="product-card">
+           
+                           <span
+                             className={`wishlist-icon ${isInWishlist(p.id) ? "active" : ""}`}
+                             onClick={() => handleWishlist(p)}
+                           >
+                             <i className="fa-solid fa-heart"></i>
+                           </span>
+           
+                           {/* ✅ IMAGE WITHOUT WRAPPER */}
+                           <LazyLoadImage
+                             src={p.image}
+                             effect="opacity"
+                             className="product-img"
+                           />
+           
+                           <h4 className="mt-3">{p.name}</h4>
+                           <p className="price">₹{p.price}</p>
+           
+                           <button
+                             className="btn btn-warning"
+                             onClick={() => handleAddToCart(p)}
+                           >
+                             Add to Cart
+                           </button>
+           
+                         </div>
+                       </div>
+                     ))}
+                   </div>
+                 </div>
       
 
       <section className='master1 text-center my-5'>

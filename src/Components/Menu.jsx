@@ -2,10 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
 import { WishlistContext } from "./WishlistContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 import "./Menu.css";
 
-/* 🔥 TOAST */
 import { toast } from "react-toastify";
 
 import cake1 from "../assets/cake1.jpg";
@@ -67,7 +66,6 @@ const Menu = () => {
   const isInWishlist = (id) =>
     wishlist.some((item) => item.id === id);
 
-  /* 🔥 HANDLERS WITH TOAST */
   const handleAddToCart = (product) => {
     addToCart(product);
     toast.success("Item added to cart 🛒");
@@ -77,27 +75,18 @@ const Menu = () => {
     const exists = isInWishlist(product.id);
     toggleWishlist(product);
 
-    if (exists) {
-      toast.info("Removed from wishlist 💔");
-    } else {
-      toast.success("Added to wishlist ❤️");
-    }
+    if (exists) toast.info("Removed from wishlist 💔");
+    else toast.success("Added to wishlist ❤️");
   };
 
   return (
     <>
-      {/* HEADER */}
       <section className="menu text-center">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12 my-4">
-              <h1>MENU & PRICING</h1>
-            </div>
-          </div>
+          <h1>MENU & PRICING</h1>
         </div>
       </section>
 
-      {/* TITLE */}
       <section className="menu1 text-center">
         <div className="container my-3">
           <h4>Menu & Pricing</h4>
@@ -105,15 +94,12 @@ const Menu = () => {
         </div>
       </section>
 
-      {/* CATEGORY */}
       <div className="category-bar">
         <div className="category-container">
           {["Birthday", "Wedding", "Custom"].map((cat) => (
             <button
               key={cat}
-              className={`category ${
-                selectedCategory === cat ? "active" : ""
-              }`}
+              className={`category ${selectedCategory === cat ? "active" : ""}`}
               onClick={() => setSelectedCategory(cat)}
             >
               {cat.toUpperCase()}
@@ -122,38 +108,44 @@ const Menu = () => {
         </div>
       </div>
 
-      {/* PRODUCTS */}
       <div className="container product-section">
-  <div className="product-grid">
-    {filteredProducts.map((p) => (
-      <div className="product-card position-relative" key={p.id}>
-        
-        {/* ❤️ WISHLIST ICON */}
-        <span
-  className={`wishlist-icon ${isInWishlist(p.id) ? "active" : ""}`}
-  onClick={() => handleWishlist(p)}
->
-  ♥
-</span>
+        <div className="row justify-content-center g-4">
+          {filteredProducts.map((p) => (
+            <div
+              key={p.id}
+              className="col-12 col-sm-6 col-md-4 d-flex justify-content-center"
+            >
+              <div className="product-card">
 
+                <span
+                  className={`wishlist-icon ${isInWishlist(p.id) ? "active" : ""}`}
+                  onClick={() => handleWishlist(p)}
+                >
+                  <i className="fa-solid fa-heart"></i>
+                </span>
 
-        <LazyLoadImage
-          src={p.image}
-          alt={p.name}
-          effect="blur"
-        />
+                {/* ✅ IMAGE WITHOUT WRAPPER */}
+                <LazyLoadImage
+                  src={p.image}
+                  effect="opacity"
+                  className="product-img"
+                />
 
-        <h4 className="mt-3">{p.name}</h4>
-        <p>₹{p.price}</p>
+                <h4 className="mt-3">{p.name}</h4>
+                <p className="price">₹{p.price}</p>
 
-        <button onClick={() => handleAddToCart(p)}>
-          Add to Cart
-        </button>
+                <button
+                  className="btn btn-warning"
+                  onClick={() => handleAddToCart(p)}
+                >
+                  Add to Cart
+                </button>
+
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
-
     </>
   );
 };

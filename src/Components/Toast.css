@@ -1,24 +1,40 @@
-/* Success toast background */
+/* ===== COMMON TOAST STYLE ===== */
+.Toastify__toast {
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 14px 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* ===== SUCCESS TOAST ===== */
 .Toastify__toast--success {
-  background: #E2852E !important; /* Bootstrap yellow */
-  color: #fff !important;
-  font-weight: 600;
+  background: #421320 !important;  
+  color: #d4f8e8 !important;        
 }
 
-/* Info toast background */
+/* ===== INFO TOAST ===== */
 .Toastify__toast--info {
-  background: #E2852E !important; /* Light yellow */
-  color: #fff !important;
-  font-weight: 600;
+  background: #421342 !important;   
+  color: #d6eaff !important;        
 }
 
-/* Error toast (optional – red keep pannalam) */
+/* ===== ERROR TOAST ===== */
 .Toastify__toast--error {
-  background: #dc3545 !important;
-  color: #fff !important;
+  background: #3c1f1f !important;   
+  color: #ffd6d6 !important;        
 }
 
-/* Progress bar yellow */
+/* ===== PROGRESS BAR ===== */
 .Toastify__progress-bar {
-  background: #000 !important;
+  background: #E2852E !important;  
+}
+
+/* ===== CLOSE BUTTON COLOR ===== */
+.Toastify__close-button {
+  color: #fff !important;
+  opacity: 0.8;
+}
+.Toastify__close-button:hover {
+  opacity: 1;
 }

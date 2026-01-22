@@ -38,19 +38,28 @@ const Testimonial = () => {
   ];
 
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,   
-    centerMode: true,
-    centerPadding: '0px',
-    autoplay: true,
-    autoplaySpeed: 2000,
-    responsive: [
-      { breakpoint: 992, settings: { slidesToShow: 1 } }
-    ]
-  };
+  dots: true,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: '0px',
+  autoplay: true,
+  autoplaySpeed: 2500,
+
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 1,
+        centerMode: false,
+        centerPadding: '0px'
+      }
+    }
+  ]
+};
+
 
   return (
     <>

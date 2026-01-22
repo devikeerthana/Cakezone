@@ -11,7 +11,7 @@ const Loading = () => {
         <div></div>
         <div></div>
       </div>
-      <p className="loading-text">LOADING</p>
+      <p className="loading-text">CAKEZONE</p>
     </div>
   );
 };
