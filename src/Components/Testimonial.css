@@ -46,13 +46,13 @@
   border-radius: 3px;
 }
 
-/* ================= DESKTOP CARD ================= */
+/* ================= DESKTOP ================= */
 
 .testimonial-card {
   padding: 15px;
-  transition: all 0.4s ease;
   transform: scale(0.9);
   opacity: 0.5;
+  transition: all 0.4s ease;
 }
 
 .testimonial-inner {
@@ -62,7 +62,6 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
-/* desktop center card */
 .slick-center .testimonial-card {
   transform: scale(1);
   opacity: 1;
@@ -120,16 +119,19 @@
 }
 
 /* ================================================= */
-/* 📱 MOBILE – FINAL GUARANTEED FIX */
+/* 📱 MOBILE – ONLY ONE CARD VISIBLE (FINAL FIX) */
 /* ================================================= */
 
 @media (max-width: 992px) {
 
-  /* slick core fix */
+  /* hide overflow completely */
   .slick-slider,
-  .slick-list,
-  .slick-track {
+  .slick-list {
     overflow: hidden !important;
+  }
+
+  .slick-track {
+    display: flex !important;
   }
 
   .slick-slide {
@@ -139,20 +141,18 @@
 
   .slick-slide > div {
     width: 100% !important;
-    display: flex;
-    justify-content: center;
   }
 
-  /* card */
   .testimonial-card {
-    width: 92% !important;
+    width: 100% !important;
     padding: 0 !important;
     transform: none !important;
     opacity: 1 !important;
   }
 
   .testimonial-inner {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     padding: 22px 18px;
   }
 }

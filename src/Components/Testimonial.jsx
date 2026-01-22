@@ -16,11 +16,14 @@ const Testimonial = () => {
     { image: test4, name: 'Jemima', profession: 'Cricketer', text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.' }
   ];
 
-  const settings = {
+const settings = {
   dots: true,
   arrows: false,
   infinite: true,
   speed: 500,
+  autoplay: true,
+  autoplaySpeed: 2500,
+
   slidesToShow: 3,
   slidesToScroll: 1,
   centerMode: true,
@@ -31,7 +34,8 @@ const Testimonial = () => {
       breakpoint: 992,
       settings: {
         slidesToShow: 1,
-        centerMode: false,   // 🔥 MOST IMPORTANT
+        slidesToScroll: 1,
+        centerMode: false,   // 🔥 MUST
         centerPadding: "0px"
       }
     }
