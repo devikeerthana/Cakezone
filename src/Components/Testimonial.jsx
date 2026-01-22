@@ -8,58 +8,35 @@ import test2 from '../assets/testimonial-2.jpg'
 import test3 from '../assets/testimonial-3.jpg'
 import test4 from '../assets/testimonial-4.jpg'
 
-
 const Testimonial = () => {
   const testimonials = [
-    {
-      image: test1,
-      name: 'John Doe',
-      profession: 'Web Developer',
-      text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.'
-    },
-    {
-      image: test2,
-      name: 'Micheal Lee',
-      profession: 'Designer',
-      text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.'
-    },
-    {
-      image: test3,
-      name: 'Sarah Paul',
-      profession: 'Manager',
-      text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.'
-    },
-    {
-      image: test4,
-      name: 'Jemima',
-      profession: 'Cricketer',
-      text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.'
-    }
+    { image: test1, name: 'John Doe', profession: 'Web Developer', text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.' },
+    { image: test2, name: 'Micheal Lee', profession: 'Designer', text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.' },
+    { image: test3, name: 'Sarah Paul', profession: 'Manager', text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.' },
+    { image: test4, name: 'Jemima', profession: 'Cricketer', text: 'Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam.' }
   ];
 
   const settings = {
-  dots: true,
-  infinite: true,
-  speed: 600,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  centerMode: true,
-  centerPadding: '0px',
-  autoplay: true,
-  autoplaySpeed: 2500,
-
-  responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 1,
-        centerMode: false,
-        centerPadding: '0px'
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '0px',
+    autoplay: true,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+          centerPadding: '0px'
+        }
       }
-    }
-  ]
-};
-
+    ]
+  };
 
   return (
     <>

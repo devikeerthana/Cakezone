@@ -1,7 +1,7 @@
 .test {
   background-image: url('../assets/bg.jpg');
   background-repeat: no-repeat;
-  background-attachment: fixed; /* ✅ correct property */
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -11,7 +11,7 @@
   color: beige;
 }
 
-.test1 h4{
+.test1 h4 {
   color: #E2852E;
   font-family: 'Lobster', cursive;
   font-size: 3rem;
@@ -23,20 +23,21 @@
   padding: 20px;
   outline: none;
   transition: all 0.5s ease;
-  transform: scale(0.9);
-  opacity: 0.5;
+  transform: scale(0.9); /* side cards smaller */
+  opacity: 0.5;          /* side cards transparent */
 }
 
 .testimonial-inner {
   position: relative;
   background: #241f1f;
-  border-radius: 1px;
+  border-radius: 10px;
   padding: 30px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   transition: all 0.5s ease;
 }
 
+/* border effect */
 .testimonial-inner::before {
   content: "";
   position: absolute;
@@ -49,13 +50,15 @@
   z-index: 1;
 }
 
-/* ---------- DESKTOP CENTER EFFECT ---------- */
+/* ---------- CENTER CARD EFFECT ---------- */
 
-.slick-center .testimonial-card,
-.owl-item.center .testimonial-card,
-.testimonial-card.active {
+.slick-center .testimonial-card {
   transform: scale(1);
   opacity: 1;
+}
+
+.slick-center .testimonial-inner {
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* ---------- CONTENT ---------- */
@@ -88,11 +91,11 @@
 
 /* ---------- MOBILE FIX ---------- */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .testimonial-card {
-    transform: scale(1) !important;
-    opacity: 1 !important;
-    padding: 10px;
+    transform: scale(1) !important; /* no scale on mobile */
+    opacity: 1 !important;           /* all visible */
+    padding: 15px;
   }
 
   .testimonial-inner {
@@ -108,36 +111,14 @@
     display: flex !important;
   }
 
-  .slick-dots {
-    bottom: -30px;
-  }
-
   .client-text {
     font-size: 14px;
   }
 }
 
-/* ---------- TABLET BLUR FIX 🔥 ---------- */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .testimonial-card {
-    transform: scale(1) !important;
-    opacity: 1 !important;
-  }
-
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-  }
-
-  .slick-track {
-    display: flex !important;
-  }
-}
-
 /* ---------- TITLE ---------- */
 
-.test1 h1{
+.test1 h1 {
   color: rgb(34, 26, 26);
   font-size: 55px;
   font-family: 'Montserrat', sans-serif;
@@ -145,7 +126,7 @@
   letter-spacing: -4px;
 }
 
-.title-underline{
+.title-underline {
   position: relative;
   width: 150px;
   height: 3px;
@@ -153,7 +134,7 @@
   margin: 10px auto 40px auto;
 }
 
-.title-underline span{
+.title-underline span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -171,22 +152,11 @@
   bottom: -40px;
   display: flex !important;
   justify-content: center;
-  align-items: flex-end; 
   width: 100%;
 }
 
 .slick-dots li {
   margin: 0 6px;
-  display: flex;
-  align-items: flex-end; 
-}
-
-.slick-dots li button {
-  width: 6px;
-  height: 30px; 
-  padding: 0;
-  display: flex;
-  align-items: flex-end;
 }
 
 .slick-dots li button:before {
