@@ -2,42 +2,49 @@
   background-image: url('../assets/bg.jpg');
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  position: relative;
-  width: 100vw;
-  padding-top: 120px;
+  width: 100%;
+  padding: 20px 0 15px;   /* 🔥 height reduced */
+}
+.footer .container {
+  padding-left: 40px;
+  padding-right: -40px;
 }
 
-/* ================= ORANGE BOX ================= */
+
+/* FORCE SINGLE ROW */
+.footer .row {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.footer .row > div {
+  margin-bottom: 0;
+}
+
+/* ================= ORANGE CARD (NORMAL POSITION) ================= */
 
 .footer .orange-box {
   background-color: #E2852E;
-  border: 3px solid #E2852E;
-  width: 300px;
+  border: 2px solid #E2852E;
+  width: 100%;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
-  position: relative;   /* IMPORTANT */
-  z-index: 10;
-  padding: 20px;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.3);
+  padding: 16px;
   text-align: center;
-  margin: 0 auto;
-  margin-top: -60px;
+  margin: 0;              /* ❌ NO NEGATIVE / OVERLAP */
+  position: static;       /* 🔥 IMPORTANT */
 }
 
 .orange-box::before {
   content: "";
   position: absolute;
-  inset: 5px;
+  inset: 6px;
   border: 1px solid #fff;
 }
 
-.footer .orange-box i {
-  font-size: 45px;
-  margin-bottom: 10px;
-}
-
 .footer .orange-box p {
-  font-size: 14px;
-  line-height: 1.7;
+  margin-bottom: 0;
 }
 
 /* ================= HEADINGS ================= */
@@ -45,104 +52,72 @@
 .footer h5 {
   color: #E2852E;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 17px;
+  margin-bottom: 8px;
 }
 
 /* ================= LINKS ================= */
 
-.footer a {
-  color: #ddd;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.footer a:hover {
-  color: #E2852E;
-}
-
-.footer .links {
+.footer ul {
   padding: 0;
   margin: 0;
 }
 
-.footer .links li {
+.footer li {
   list-style: none;
+  margin-bottom: 4px;
+}
+
+.footer a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 /* ================= SOCIAL ================= */
 
+.footer .social-icons {
+  margin-top: 5px;
+}
+
 .footer .social-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #E2852E;
-  color: #fff;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
 }
 
 /* ================= NEWSLETTER ================= */
 
 .footer .newsletter-input {
-  display: flex;
+  margin-top: 5px;
 }
 
 .footer .newsletter-input input {
-  border: none;
-  padding: 10px;
-  width: 100%;
+  padding: 8px;
 }
 
 .signup {
-  background: #E2852E;
-  border: none;
-  padding: 10px 20px;
-  color: #fff;
-  font-weight: 600;
+  padding: 8px 16px;
 }
 
-/* ================= MOBILE TWO COLUMN FIX ================= */
+/* ================= MOBILE ================= */
 
 @media (max-width: 767px) {
 
   .footer {
-    padding-top: 40px;
+    padding: 18px 0 12px;
     text-align: center;
   }
 
-  /* 🔥 FORCE 2 COLUMNS PER ROW */
+  /* MOBILE = 2 PER ROW */
   .footer .row {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   .footer .row > div {
-    width: 50%;          /* 👈 TWO COLUMNS */
+    width: 50%;
     max-width: 50%;
-    padding: 15px;
-    margin: 0 auto 25px;
-  }
-
-  /* ORANGE BOX CENTER FIX */
-  .footer .orange-box {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .footer .newsletter-input {
-    flex-direction: column;
-  }
-
-  .footer .newsletter-input input {
+    padding: 6px;
     margin-bottom: 10px;
-  }
-
-  .signup {
-    width: 100%;
   }
 }

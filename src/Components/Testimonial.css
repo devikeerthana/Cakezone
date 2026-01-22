@@ -1,3 +1,5 @@
+/* ---------- HEADER ---------- */
+
 .test {
   background-image: url('../assets/bg.jpg');
   background-repeat: no-repeat;
@@ -17,14 +19,42 @@
   font-size: 3rem;
 }
 
-/* ---------- COMMON ---------- */
+.test1 h1 {
+  color: rgb(34, 26, 26);
+  font-size: 55px;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+
+/* ---------- TITLE LINE ---------- */
+
+.title-underline {
+  width: 150px;
+  height: 3px;
+  background-color: #E2852E;
+  margin: 10px auto 40px;
+  position: relative;
+}
+
+.title-underline span {
+  width: 40px;
+  height: 6px;
+  background-color: #E2852E;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+}
+
+/* ---------- CARD COMMON ---------- */
 
 .testimonial-card {
   padding: 20px;
   outline: none;
   transition: all 0.5s ease;
-  transform: scale(0.9); /* side cards smaller */
-  opacity: 0.5;          /* side cards transparent */
+  transform: scale(0.9);
+  opacity: 0.5;
   display: flex;
   justify-content: center;
 }
@@ -34,30 +64,21 @@
   background: #241f1f;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
   overflow: hidden;
   transition: all 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;   /* ensures all cards equal height */
-  min-height: 300px;      /* adjustable, ensures uniformity */
+  min-height: 300px;
 }
 
-/* border effect */
+/* border */
 .testimonial-inner::before {
   content: "";
   position: absolute;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
+  inset: 8px;
   border: 1px solid #fff;
-  pointer-events: none;
-  z-index: 1;
 }
 
-/* ---------- CENTER CARD EFFECT ---------- */
+/* ---------- CENTER CARD ---------- */
 
 .slick-center .testimonial-card {
   transform: scale(1);
@@ -65,7 +86,7 @@
 }
 
 .slick-center .testimonial-inner {
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
 }
 
 /* ---------- CONTENT ---------- */
@@ -80,107 +101,75 @@
 
 .client-name {
   font-weight: bold;
-  margin-bottom: 5px;
   color: #E2852E;
 }
 
 .client-profession {
   color: #e9e7e4;
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .client-text {
   color: aliceblue;
   font-size: 15px;
   line-height: 1.6;
-  overflow-wrap: break-word; /* ensures long text wraps */
-}
-
-/* ---------- MOBILE & TABLET FIX ---------- */
-
-@media (max-width: 992px) {
-  .testimonial-card {
-    transform: scale(1) !important; /* no scaling */
-    opacity: 1 !important;           /* all visible */
-    padding: 15px;
-  }
-
-  .testimonial-inner {
-    padding: 25px 20px;
-    min-height: auto;               /* mobile height adjusts to content */
-  }
-
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  .slick-track {
-    display: flex !important;
-    align-items: stretch;
-  }
-
-  .client-text {
-    font-size: 14px;
-  }
-}
-
-/* ---------- TITLE ---------- */
-
-.test1 h1 {
-  color: rgb(34, 26, 26);
-  font-size: 55px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800; 
-  letter-spacing: -4px;
-}
-
-.title-underline {
-  position: relative;
-  width: 150px;
-  height: 3px;
-  background-color: #E2852E;
-  margin: 10px auto 40px auto;
-}
-
-.title-underline span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 6px;
-  background-color: #E2852E;
-  border-radius: 3px;
 }
 
 /* ---------- DOTS ---------- */
 
 .slick-dots {
-  position: absolute;
   bottom: -40px;
-  display: flex !important;
-  justify-content: center;
-  width: 100%;
-}
-
-.slick-dots li {
-  margin: 0 6px;
 }
 
 .slick-dots li button:before {
-  content: '' !important;
-  display: block;
+  content: '';
   width: 6px;
   height: 20px;
-  background-color: #a8a6a6;
+  background: #a8a6a6;
+  display: block;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
 .slick-dots li.slick-active button:before {
-  background-color: #E2852E;
+  background: #E2852E;
   height: 30px;
+}
+
+/* ================================================= */
+/* 📱 MOBILE – ONLY ONE CARD VISIBLE */
+/* ================================================= */
+
+@media (max-width: 992px) {
+
+  /* MOST IMPORTANT */
+  .slick-list {
+    overflow: hidden;
+  }
+
+  .testimonial-card {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .testimonial-inner {
+    width: 100%;
+    min-height: auto;
+    padding: 25px 20px;
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .slick-center .testimonial-card {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  .client-text {
+    font-size: 14px;
+  }
 }

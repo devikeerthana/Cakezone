@@ -7,7 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 const Footer = () => {
   return (
     <>
-      <section className='footer mt-5 mb-0'>
+      <section className='footer mt-5 '>
         <div className='container-fluid px-0'>
           <div className='row m-0'>
 
