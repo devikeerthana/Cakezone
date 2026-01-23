@@ -7,19 +7,27 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  padding: 100px 0;
+  padding: 52px 0;     /* 🔥 EXACT ABOUT US FEEL */
+  text-align: center;
 }
 
 .test h1 {
   font-size: 60px;
   font-weight: 900;
-  color: #f5f5dc; /* beige */
+  color: #f5f5dc;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin: 0;
 }
 
+
+/* ================================================= */
+/* ---------- TESTIMONIAL TITLE ---------- */
+/* ================================================= */
+
 .test1 {
-  padding: 60px 0 40px 0;
+  padding: 60px 0 40px;
+  text-align: center;
 }
 
 .test1 h4 {
@@ -65,7 +73,7 @@
 /* ================================================= */
 
 .testimonial-card {
-  padding: 20px;
+  padding: 10px;
   transition: all 0.4s ease;
   transform: scale(0.9);
   opacity: 0.5;
@@ -76,7 +84,7 @@
   background: #241f1f;
   border-radius: 15px;
   padding: 30px;
-  min-height: 320px;
+  min-height: 280px;        /* 🔥 proper card height */
   box-shadow: 0 8px 20px rgba(0,0,0,0.35);
   display: flex;
   flex-direction: column;
@@ -160,9 +168,15 @@
 /* ================================================= */
 
 @media (max-width: 992px) {
-  .slick-slide > div {
-    width: 100% !important;
-    margin: 0 auto !important;
+
+  .test {
+    background-attachment: scroll;
+    padding: 60px 0;        /* 🔥 same proportion as desktop */
+  }
+
+  .test h1 {
+    font-size: 40px;
+    line-height: 1.2;
   }
 
   .testimonial-card {
@@ -174,14 +188,8 @@
   }
 
   .testimonial-inner {
-    width: 100% !important;
-    padding: 25px 20px !important;
-    min-height: auto !important;
-  }
-
-  .client-img {
-    width: 100px;
-    height: 100px;
+    padding: 20px 15px;
+    min-height: auto;
   }
 
   .test1 h4 {
@@ -189,6 +197,6 @@
   }
 
   .test1 h1 {
-    font-size: 35px;
+    font-size: 34px;
   }
 }

@@ -3,15 +3,16 @@
   color: #fff;
   font-family: 'Poppins', sans-serif;
   width: 100%;
-  padding: 20px 0 15px;   /* 🔥 height reduced */
+  padding: 20px 0 15px;
 }
+
+/* container – unchanged */
 .footer .container {
   padding-left: 40px;
   padding-right: -40px;
 }
 
-
-/* FORCE SINGLE ROW */
+/* row */
 .footer .row {
   display: flex;
   align-items: flex-start;
@@ -22,7 +23,8 @@
   margin-bottom: 0;
 }
 
-/* ================= ORANGE CARD (NORMAL POSITION) ================= */
+/* ================= ORANGE CARD ================= */
+/* 👇 CARD FOOTER KULLA THAN – NO MOVE */
 
 .footer .orange-box {
   background-color: #E2852E;
@@ -32,15 +34,18 @@
   box-shadow: 0 0 6px rgba(245, 158, 11, 0.3);
   padding: 16px;
   text-align: center;
-  margin: 0;              /* ❌ NO NEGATIVE / OVERLAP */
-  position: static;       /* 🔥 IMPORTANT */
+  margin: 0;
+  margin-top: -10px;
+  position: relative;   /* 🔥 ONLY FOR ::before – DESIGN CHANGE ILLA */
 }
 
+/* 🔥 CLICK BLOCK FIX */
 .orange-box::before {
   content: "";
   position: absolute;
   inset: 6px;
   border: 1px solid #fff;
+  pointer-events: none; /* 🔥 THIS IS THE ACTUAL FIX */
 }
 
 .footer .orange-box p {
@@ -109,7 +114,6 @@
     text-align: center;
   }
 
-  /* MOBILE = 2 PER ROW */
   .footer .row {
     flex-wrap: wrap;
   }
